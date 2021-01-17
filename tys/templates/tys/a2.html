@@ -1,0 +1,29 @@
+{% extends "tys/homepage.html" %}
+
+<html>
+<body>
+
+{% block content_heading %} 
+<p><b><a href="/about_us/" style="font-size:20px;color:blue;margin:10px;">About Us</a><br><br>
+<a href="/contact_us/" style="font-size:20px;color:blue;margin:10px;">Contact Us</a><br><br>
+<a href="/login/" style="font-size:20px;color:blue;margin:10px;">Login</a><br>
+</b>
+
+</p>
+{% endblock %}
+
+{% block content %} 
+{% if x %}
+<div style="margin:40px;">{{msg}}
+{% else %}
+<form method="POST" style="text-align:center;margin-top:100px;">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit" style="padding:5px;"><b>Resgister</button>
+</form>
+{% endif %}
+
+{% endblock %}
+
+</body>
+</html>

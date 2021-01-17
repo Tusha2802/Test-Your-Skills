@@ -1,0 +1,44 @@
+body{
+background-color:aqua;
+}
+#content {
+float:left;
+width:65%;
+padding:0 0 0 30px;
+height:500px;
+border:5px solid red;
+margin-top:20px;
+background-color:white;
+font-size:20px;
+font-weight:bold;
+}
+
+#sidebar { 
+float:left;
+width:20%;
+padding:20px;
+background:white;
+height:465px;
+border:5px solid blue;
+margin:20px;
+}
+ 
+#header {
+font-family: 'Algerian', sans-serif;
+    color:red;
+    font-weight:bold;
+    font-style:italic;
+    text-decoration:underline;
+    font-size:22px;
+    margin-right:0%;
+    text-align:center;
+}
+
+
+#subheader {
+    text-align:right;
+    padding-top:0px;
+    font-size:20px;
+    font-weight:bold;
+    color:black;    
+}

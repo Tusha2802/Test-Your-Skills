@@ -1,0 +1,15 @@
+<html>
+<body>
+{% for i in l %}	
+<div style="border:2px solid red;overflow:auto;margin-top:5px;">
+   <div style="margin:20px;">{{i.question}}</div>
+   <div style="margin:20px;margin-left:40px;">{{i.ans1}}</div>
+   <div style="margin:20px;margin-left:40px;">{{i.ans2}}</div>
+   <div style="margin:20px;margin-left:40px;">{{i.ans3}}</div>
+   <div style="margin:20px;margin-left:40px;">{{i.ans4}}</div>	
+   <div style="margin:20px;margin-left:40px;"><a href="{% url "rem" i.id %}">X</a></div>
+   <div style="margin:20px;margin-left:40px;"><a href="{% url "upd" i.id %}">Edit</a></div>
+</div>
+{% endfor %}
+</body>
+</html>

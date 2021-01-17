@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+<body>
+<head>
+<link href="{% static "css/tys.css" %}" rel="stylesheet">
+</head>
+<div id = "header">
+<h1><b>TEST YOUR SKILLS</b></h1>
+</div>
+
+<div>
+
+<div style="float:left;width:60%;border:0px solid black;">
+<form method="POST">
+{% csrf_token %}
+{% for i in l %}	
+<div style="border-bottom:2px solid red;border-right:2px solid red;overflow:auto;margin-top:5px;padding:10px;width:95%;">
+   <b><div style="margin:20px;font-size:20px;"> {{i.question}}</div>
+   <div style="border:0px solid cyan;">
+   <div style="margin:0px;margin-left:40px;float:left;width:50%;font-size:18px;"><input type="radio" name="{{i.id}}" value="1">{{i.ans1}}</div>
+   <div style="margin:0px;margin-left:40px;font-size:18px;"><input type="radio" name="{{i.id}}" value="2">{{i.ans2}}</div>
+   </div>
+   <div style="border:1px solid cyan;margin-top:10px">
+   	<div style="margin:0px;margin-left:40px;float:left;width:50%; font-size:18px;"><input type="radio" name="{{i.id}}" value="3">{{i.ans3}}</div>
+   	<div style="margin:0px;margin-left:40px;font-size:18px;"><input type="radio" name="{{i.id}}" value="4">{{i.ans4}}</div>	
+   </div>
+   
+</div>
+{% endfor %}
+<div style="font-size:20px;margin:20px;">{% include "./pagination.html" with page=l %}</div>
+<div><button type="submit" style="padding:8px;margin:20px;"><b>Submit</button></div>
+</form>
+</div>
+
+
+</div>
+
+</body>
+</html>

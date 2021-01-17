@@ -1,0 +1,31 @@
+{% extends "tys/homepage.html" %}
+
+<html>
+<body>
+
+{% block content_heading %}
+
+<h1 align="center">Choose Your Test</h1>
+<b><a href="/b1/" style="font-size:20px;color:blue;margin:10px;">CS Test</a><br><br>
+
+<a href="/resulthistory/" style="font-size:20px;color:blue;margin:10px;">Test History</a>
+</b>
+{% endblock %}
+
+{% block content %}
+
+{% for i in l %}	
+<div style="border:2px solid green;overflow:auto;margin-right:30px;margin-top:20px;">
+   
+   <div style="margin:20px;float:left;width:30px;">{{i.id}}</div>
+   <div style="margin:20px;margin-left:40px;float:left;width:30px;">{{i.stream}}</div>
+   <div style="margin:20px;margin-left:40px;float:left;width:150px;">{{i.date}}</div>
+   <div style="margin:20px;margin-left:40px;float:left;width:30px;">{{i.result}}</div>
+   
+</div>
+{% endfor %}
+
+{% endblock %}
+
+</body>
+</html>
